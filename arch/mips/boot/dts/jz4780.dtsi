@@ -641,12 +641,15 @@
 			interrupts = <37>;
 
 			clocks = <&cgu JZ4780_CLK_MSC0>;
+			clock-names = "mmc";
 
 			cap-sd-highspeed;
 			cap-mmc-highspeed;
 
 			dmas = <&dma JZ4780_DMA_MSC0_TX JZ4780_DMA_MSC0_RX 0xffffffff>;
 			dma-names = "rx-tx";
+			dma-tx-id = <JZ4780_DMA_MSC0_TX>;
+			dma-rx-id = <JZ4780_DMA_MSC0_RX>;
 		};
 
 		msc1: msc@13460000 {
@@ -659,9 +662,12 @@
 			interrupts = <36>;
 
 			clocks = <&cgu JZ4780_CLK_MSC1>;
+			clock-names = "mmc";
+
 			dmas = <&dma JZ4780_DMA_MSC1_TX JZ4780_DMA_MSC1_RX 0xffffffff>;
 			dma-names = "rx-tx";
-
+			dma-tx-id = <JZ4780_DMA_MSC1_TX>;
+			dma-rx-id = <JZ4780_DMA_MSC1_RX>;
 		};
 
 		ehci: jz4780-ehci@0x13490000 {
